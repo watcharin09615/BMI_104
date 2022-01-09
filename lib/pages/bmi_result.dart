@@ -96,7 +96,7 @@ class _ResultPageState extends State<ResultPage> {
     );
   }
 
-  void calculate(a) {
+  void calculate() {
     double height = double.parse(widget.height!) / 100;
     double weight = double.parse(widget.weight!);
 
@@ -119,8 +119,6 @@ class _ResultPageState extends State<ResultPage> {
         _msg = 'อ้วนระดับ 3 (อ้วนระดับรุนแรงมาก)';
       }
     });
-    // ignore: void_checks
-    return a;
   }
 
   Row calbtn(BuildContext context) {
