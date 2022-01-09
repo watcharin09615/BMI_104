@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bmi_main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/bg_summer_sea.jpg'),
+              image: AssetImage('images/BMI.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -39,7 +40,12 @@ class _HomePageState extends State<HomePage> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            var route = MaterialPageRoute(
+              builder: (context) => const FormPage(),
+              );
+              Navigator.push(context, route);
+          },
           child: const Text(
             'เริ่มต้นใช้งาน',
             style: TextStyle(fontSize: 20),
@@ -66,14 +72,14 @@ class _HomePageState extends State<HomePage> {
           'ยินดีต้อนรับเข้าสู่',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 24,
+            fontSize: 30,
             color: Colors.black,
           ),
         ),
         Text(
           'แอปพลิเคชันคำนวณ BMI',
           style: TextStyle(
-            fontSize: 24,
+            fontSize: 26,
             color: Colors.black,
           ),
         ),
