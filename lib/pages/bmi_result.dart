@@ -122,4 +122,44 @@ class _ResultPageState extends State<ResultPage> {
     // ignore: void_checks
     return a;
   }
+
+  Row calbtn(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton.icon(
+          icon: const FaIcon(FontAwesomeIcons.calculator),
+          label: const Text(
+            'คำนวณ',
+            style: TextStyle(fontSize: 18),
+          ),
+          onPressed: () {
+            calculate();
+          },
+          style: ElevatedButton.styleFrom(
+              // primary: Colors.pink,
+              fixedSize: const Size(140, 50),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15))),
+        ),
+        const Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+        ElevatedButton.icon(
+          icon: const FaIcon(FontAwesomeIcons.arrowLeft),
+          label: const Text(
+            'กลับ',
+            style: TextStyle(fontSize: 18),
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          style: ElevatedButton.styleFrom(
+              // primary: Colors.white,
+              // side: const BorderSide(width: 3, color: Colors.green),
+              fixedSize: const Size(140, 50),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15))),
+        ),
+      ],
+    );
+  }
 }
