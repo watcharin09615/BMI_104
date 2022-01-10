@@ -48,8 +48,12 @@ class _ResultPageState extends State<ResultPage> {
                 ],
               ),
               Column(
-                children: const [
-                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                children: [
+                  const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  calbtn(context),
+                  resultbox(),
+                  answerbox(),
+
                 ],
               ),
             ],
@@ -58,6 +62,67 @@ class _ResultPageState extends State<ResultPage> {
       ),
     );
   }
+
+  Container resultbox() {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(30, 25, 30, 10),
+      padding: const EdgeInsets.only(top: 5),
+      alignment: Alignment.center,
+      decoration: const BoxDecoration(
+        color: Color(0xffffffff),
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 6),
+            blurRadius: 12,
+            color: Color(0xFF7A7A7A),
+          )
+        ],
+      ),
+      child: Column(
+        children: [
+          const Padding(padding: EdgeInsets.only(top: 5)),
+          const Text(
+            'BMI',
+            style: TextStyle(fontSize: 20),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            _bmi == null ? '' : _bmi!.toStringAsFixed(2),
+            style: const TextStyle(
+                fontSize: 50, fontWeight: FontWeight.w700, color: Colors.green),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container answerbox() {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+      padding: const EdgeInsets.all(10),
+      alignment: Alignment.center,
+      decoration: const BoxDecoration(
+        color: Color(0xffffffff),
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 5),
+            blurRadius: 12,
+            color: Color(0xFF7A7A7A),
+          )
+        ],
+      ),
+      child: Text(
+        _msg == null ? '' : _msg!.toString(),
+        // 'การแปลผล : ' + _msg.toString(),
+        style: const TextStyle(fontSize: 24),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+
 
 
   Container value(a,u,ico,va) {
